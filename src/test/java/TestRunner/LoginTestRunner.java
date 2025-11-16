@@ -27,12 +27,5 @@ public class LoginTestRunner extends Setup {
 
     }
 
-//    @Test(priority = 2,description = "wrong credential")
-//    public void doLoginWithWrongCred() throws InterruptedException {
-//        LoginPage loginPage=new LoginPage(driver);
-//        loginPage.login("Admin251","78945");
-//        Thread.sleep(2000);
-//
-//    }
 
 }
