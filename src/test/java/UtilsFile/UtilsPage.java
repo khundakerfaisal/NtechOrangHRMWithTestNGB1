@@ -25,6 +25,13 @@ public class UtilsPage {
         writer.close();
 
     }
+    public static JSONObject getUser() throws IOException, ParseException {
+        String filePath="src/test/resources/employee.json";
+        JSONParser parser=new JSONParser();
+        JSONArray lastAddedArray= (JSONArray) parser.parse(new FileReader(filePath));
+        JSONObject lastObject= (JSONObject) lastAddedArray.get(lastAddedArray.size()-1);
+        return lastObject;
+    }
 
     public static void scrollBy(WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;

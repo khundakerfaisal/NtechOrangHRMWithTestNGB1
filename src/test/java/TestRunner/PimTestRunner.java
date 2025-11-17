@@ -12,7 +12,7 @@ import java.io.IOException;
 
 
 public class PimTestRunner extends Setup {
-    @Test(priority = 1, description = "Valid credential")
+    @Test(priority = 1,groups = "smoke", description = "Valid credential")
     public void doLoginWithValidCred() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         String username=System.getProperty("username");
@@ -29,7 +29,7 @@ public class PimTestRunner extends Setup {
 
     }
 
-    @Test(priority = 2, description = "Enter employee info")
+    @Test(priority = 2,groups = "smoke", description = "Enter employee info")
     public void enterPimInfo() throws InterruptedException, IOException, ParseException {
         PIMPages pimPages=new PIMPages(driver);
         Faker faker=new Faker();

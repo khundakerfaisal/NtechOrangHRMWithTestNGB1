@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="Orange HRM">
+        <test name="Login Test">
+            <groups name="Smoke Suite">
+                <run>
+                    <include name="smoke"/>
+                </run>
+            </groups>
+            <classes>
+                <class name="TestRunner.LoginTestRunner"/>
+            </classes>
+        </test>
+    <test name="PIM Test">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestRunner.PimTestRunner"/>
+        </classes>
+    </test>
+</suite>

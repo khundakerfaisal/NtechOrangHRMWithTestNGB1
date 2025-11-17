@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class LoginTestRunner extends Setup {
 
-    @Test(priority = 1, description = "Valid credential")
+    @Test(priority = 1,groups = "smoke", description = "Valid credential")
     public void doLoginWithValidCred() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         String username=System.getProperty("username");

@@ -14,7 +14,7 @@ import java.time.Duration;
 public class Setup {
     public WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(groups = "smoke")
     public void StartBrowser(){
 //        ChromeOptions options = new ChromeOptions();
 //        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
@@ -26,7 +26,7 @@ public class Setup {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 
-    @AfterClass
+    @AfterClass(groups = "smoke")
     public void CloseBrowser(){
         driver.quit();
     }
