@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","18672","Enter employee info","Orange HRM","Mon Nov 17 20:18:03 BDT 2025","passed","Mon Nov 17 20:18:22 BDT 2025","TestRunner.PimTestRunner","PIM Test","TestRunner.PimTestRunner","enterPimInfo"
+"","9141","Valid credential","Orange HRM","Mon Nov 17 20:17:54 BDT 2025","passed","Mon Nov 17 20:18:03 BDT 2025","TestRunner.PimTestRunner","PIM Test","TestRunner.PimTestRunner","doLoginWithValidCred"

@@ -3,17 +3,22 @@ package TestRunner;
 import Config.Setup;
 import Pages.LoginPage;
 import Pages.PIMPages;
+import UtilsFile.UtilsPage;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
-public class PIMTestRunner extends Setup {
+import java.io.IOException;
+
+
+public class PimTestRunner extends Setup {
     @Test(priority = 1, description = "Valid credential")
     public void doLoginWithValidCred() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("Admin", "admin123"); //Login
+        String username=System.getProperty("username");
+        String password=System.getProperty("password");
+        loginPage.login(username,password);
+//        loginPage.login("Admin", "admin123"); //Login
         Thread.sleep(2000);
         //Assertion
 //        WebElement MatchText = driver.findElement(By.xpath("//span/h6[text()='Dashboard']"));
@@ -24,18 +29,19 @@ public class PIMTestRunner extends Setup {
 
     }
 
-    @Test(priority = 2, description = "Valid credential")
-    public void enterPimInfo() throws InterruptedException {
+    @Test(priority = 2, description = "Enter employee info")
+    public void enterPimInfo() throws InterruptedException, IOException, ParseException {
         PIMPages pimPages=new PIMPages(driver);
         Faker faker=new Faker();
         String firstName=faker.name().firstName();
         String middleName=faker.name().nameWithMiddle();
         String lastName=faker.name().lastName();
-        String userName=faker.name().lastName();
+        String username=faker.name().lastName();
         String password="Aa@123456";
         String confirmPassword="Aa@123456";
 
-        pimPages.inputPIMInfo(firstName,middleName,lastName,userName,password,confirmPassword);
+        pimPages.inputPIMInfo(firstName,middleName,lastName,username,password,confirmPassword);
+        UtilsPage.saveEmployee(username,password,confirmPassword);
         Thread.sleep(2000);
     }
 

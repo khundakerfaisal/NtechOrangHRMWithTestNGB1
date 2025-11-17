@@ -1,5 +1,6 @@
 package Pages;
 
+import UtilsFile.UtilsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,8 @@ import javax.xml.xpath.XPath;
 import java.util.List;
 
 public class PIMPages {
+    WebDriver driver;
+
 
     @FindBy(className = "oxd-main-menu-item-wrapper")
     List<WebElement> pimMenu;
@@ -32,15 +35,16 @@ public class PIMPages {
     List<WebElement> inputPassword;
     @FindBy(className = "oxd-input")
     List<WebElement> inputConfirmPassword;
-    @FindBy(xpath="//button[@type='submit']")
+    @FindBy(xpath = "//button[@type='submit']")
     WebElement submitButton;
 
 
-    public PIMPages(WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public PIMPages(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    public void inputPIMInfo(String firstName,String middleName,String lastName,String userName,String password,String confirmPassword) throws InterruptedException {
+    public void inputPIMInfo(String firstName, String middleName, String lastName, String userName, String password, String confirmPassword) throws InterruptedException {
         pimMenu.get(1).click();
         Thread.sleep(2000);
         addButton.get(2).click();
@@ -56,6 +60,7 @@ public class PIMPages {
 
         inputUserName.get(5).sendKeys(userName);
         Thread.sleep(1000);
+        UtilsPage.scrollBy(driver);
         inputPassword.get(6).sendKeys(password);
         Thread.sleep(1000);
         inputConfirmPassword.get(7).sendKeys(confirmPassword);
