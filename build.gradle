@@ -22,6 +22,8 @@ dependencies {
     implementation("io.qameta.allure:allure-testng:2.31.0")
     // https://mvnrepository.com/artifact/org.apache.commons/commons-csv
     implementation("org.apache.commons:commons-csv:1.14.1")
+    // https://mvnrepository.com/artifact/com.aventstack/extentreports
+    implementation("com.aventstack:extentreports:5.1.0")
 
 
 }
