@@ -13,8 +13,6 @@ public class LoginWithCsv extends Setup {
     @Test(dataProvider = "loginCsvDataSet",dataProviderClass = LoginCsvData.class)
     public void doLoginWithJson(String username,String password) throws InterruptedException, IOException, ParseException {
         LoginPage loginPage = new LoginPage(driver);
-//        String username = UtilsPage.getUser().get("UserName").toString();
-//        String password = UtilsPage.getUser().get("Password").toString();
         loginPage.login(username, password);
         Thread.sleep(4000);
     }
